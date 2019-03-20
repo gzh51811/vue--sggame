@@ -85,9 +85,7 @@ export default {
     },
     checkname() {
       let name = this.$route.name;
-      console.log(name);
-      let navs = this.$store.state.navs;
-      console.log(navs);
+      let navs = this.navs;
       for (var i = 0; i < navs.length; i++) {
         if (navs[i].name == name) {
           this.active = i;
@@ -107,8 +105,7 @@ export default {
 
 <style scoped>
 .bottom {
-  height: 2.688787rem;
-  padding: 0.457666rem 0 0.343249rem;
+  height: 47px;
   background: #333;
 }
 .bitem {
@@ -120,7 +117,7 @@ export default {
   align-items: center;
 }
 .bitem i {
-  font-size: 1.5rem;
+  font-size: 16px;
 }
 .mint-tabbar > .mint-tab-item.is-selected,
 .active {

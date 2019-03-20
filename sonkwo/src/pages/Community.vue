@@ -41,7 +41,6 @@
 			tag(idx){
 				if (idx==2) {
 					this.isShow=false;
-					console.log('隐藏果帖组件')
 				}else{
 					this.isShow=true;
 				}

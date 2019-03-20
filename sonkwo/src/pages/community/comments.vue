@@ -45,7 +45,6 @@
 
 		},
 		methods: {
-			
 			//跳转当前用户详情
 			tagUser() {
 				this.$router.push({

@@ -25,7 +25,7 @@ const store =new Vuex.Store({
 				this.state.postsList.push(payload[i]);
 			}
 		},
-		updateCartList(state,payload){
+		updateCartList(state,payload=[]){
 			this.state.cartList=[];
 			for (let i=0;i<payload.length;i++) {
 				this.state.cartList.push(payload[i]);
