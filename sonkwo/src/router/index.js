@@ -7,7 +7,6 @@ import Login from '../pages/Login';
 import Reg from '../pages/Reg';
 import MyPerson from '../pages/MyPerson';
 import Info from '../pages/Info';
-import Home from "../pages/Home.vue";
 import Community from "../pages/Community.vue";
 import Cart from "../pages/Cart.vue";
 import User from "../pages/user/User.vue";
