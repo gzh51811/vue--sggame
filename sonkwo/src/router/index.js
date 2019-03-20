@@ -13,6 +13,10 @@ import Cart from "../pages/Cart.vue";
 import User from "../pages/user/User.vue";
 import Note from "../pages/note/Note.vue";
 import Group from "../pages/group/Group.vue";
+import Home from "../pages/Home.vue";
+import Headlines from "../pages/Headlines.vue";
+import Product from "../pages/Product.vue";
+import Title from "../pages/Headlines/Title.vue";
 
 // 拓展路由
 Vue.use(VueRouter);
@@ -74,6 +78,20 @@ let router = new VueRouter({
       name: "Group",
       path: "/group",
       component: Group
+    },{
+      name: "Headlines",
+      path: "/headlines",
+      component: Headlines
+    },
+    {
+      name: "Product",
+      path: "/product/:product_id",
+      component: Product
+    },
+    {
+      name: "Title",
+      path: "/title/:id",
+      component: Title
     }
   ]
 });
