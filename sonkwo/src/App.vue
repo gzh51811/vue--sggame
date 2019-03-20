@@ -5,7 +5,7 @@
       <mt-tab-item
         class="bitem"
         :class="{active:idx===active}"
-        v-for="(nav,idx) in this.$store.state.navs"
+        v-for="(nav,idx) in navs"
         :id="nav.name"
         @click.native="goto(nav,idx)"
         :key="nav.name"
@@ -28,6 +28,7 @@ import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 
 Vue.prototype.$axios = axios;
+axios.defaults.headers.post["Content-type"] = "appliction/x-www-form-urlencoded";
 
 import { Tabbar, TabItem } from "mint-ui";
 
@@ -46,7 +47,34 @@ export default {
       iftabbar: false,
       rCompent: ["Home", "Headlines", "Community", "Cart", "MyPerson"],
       name: name,
-      selected: false
+      selected: false,
+      navs: [
+        {
+          text: "商城",
+          name: "Home",
+          icon: "el-icon-goods"
+        },
+        {
+          text: "头条",
+          name: "Headlines",
+          icon: "el-icon-document"
+        },
+        {
+          text: "社区",
+          name: "Community",
+          icon: "el-icon-message"
+        },
+        {
+          text: "购物车",
+          name: "Cart",
+          icon: "el-icon-menu"
+        },
+        {
+          text: "我的",
+          name: "MyPerson",
+          icon: "el-icon-setting"
+        }
+      ],
     };
   },
   methods: {

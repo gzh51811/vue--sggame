@@ -7,6 +7,12 @@ import Login from '../pages/Login';
 import Reg from '../pages/Reg';
 import MyPerson from '../pages/MyPerson';
 import Info from '../pages/Info';
+import Home from "../pages/Home.vue";
+import Community from "../pages/Community.vue";
+import Cart from "../pages/Cart.vue";
+import User from "../pages/user/User.vue";
+import Note from "../pages/note/Note.vue";
+import Group from "../pages/group/Group.vue";
 
 // 拓展路由
 Vue.use(VueRouter);
@@ -17,7 +23,7 @@ let router = new VueRouter({
   routes: [
     {
       path: '/',   //重定向：当浏览器url地址为/,自动跳转到/home
-      redirect: '/myperson'
+      redirect: '/home'
     },
     {
       name: 'Login',
@@ -38,6 +44,36 @@ let router = new VueRouter({
       name: 'Info',
       path: '/info',
       component: Info
+    },
+    {
+      name: "Home",
+      path: "/home",
+      component: Home
+    },
+    {
+      name: "Community",
+      path: "/community",
+      component: Community
+    },
+    {
+      name: "Cart",
+      path: "/cart",
+      component: Cart
+    },
+    {
+      name: "User",
+      path: "/user",
+      component: User
+    },
+    {
+      name: "Note",
+      path: "/note",
+      component: Note
+    },
+    {
+      name: "Group",
+      path: "/group",
+      component: Group
     }
   ]
 });
