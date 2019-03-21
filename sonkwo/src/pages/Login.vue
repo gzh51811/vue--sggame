@@ -3,7 +3,7 @@
     <el-row>
       <el-col :span="24">
         <div class="grid-content bg-purple-dark">
-          <a class="ztit action-button">关闭</a>
+          <a class="ztit action-button" @click="home">关闭</a>
           <a class="zti">登录</a>
           <a class="ztit action-button" @click="reg">注册</a>
         </div>
@@ -52,6 +52,9 @@ export default {
   methods: {
     reg() {
       this.$router.push("/reg");
+    },
+    home() {
+      this.$router.push("/home");
     },
     submitForm(formName) {
       this.$refs[formName].validate(valid => {

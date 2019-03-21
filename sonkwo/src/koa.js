@@ -10,6 +10,6 @@ app.use(static('./'));
 
 app.use(routers.routes());
 
-app.listen(3007, () => {
+app.listen(1811, () => {
 	console.log('服务器启动');
 });
