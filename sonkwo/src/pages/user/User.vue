@@ -59,7 +59,7 @@
 			}
 		},
 		created(){
-			this.$axios.get('/user', {
+			this.$axios.get('/api/profile', {
 				params: {
 					'locale':'js',
 					sonkwo_version:1,

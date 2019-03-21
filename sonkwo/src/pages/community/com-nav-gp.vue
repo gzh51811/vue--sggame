@@ -42,7 +42,7 @@
 			},
 			tagContent(index){
 				if (index==='7') {
-					this.$axios.get('/group/new', {
+					this.$axios.get('/api/communities/groups.json', {
 						params: {
 							'locale':'js',
 							sonkwo_version:1,
@@ -58,7 +58,7 @@
 						this.contentList=res.data.groups;
 					})
 				}else{
-					this.$axios.get('/group/new', {
+					this.$axios.get('/api/communities/groups.json', {
 						params: {
 							'locale':'js',
 							sonkwo_version:1,
@@ -78,7 +78,7 @@
 		},
 		created(){
 			//请求groupname
-			this.$axios.get('/group/id', {
+			this.$axios.get('/api/tags.json', {
 				params: {
 					'locale':'js',
 					sonkwo_version:1,
@@ -96,7 +96,7 @@
 			})
 			
 			//请求groupcontent
-			this.$axios.get('/group/new', {
+			this.$axios.get('/api/communities/groups.json', {
 				params: {
 					'locale':'js',
 					sonkwo_version:1,

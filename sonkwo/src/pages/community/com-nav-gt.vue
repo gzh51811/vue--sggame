@@ -62,7 +62,7 @@
 					if(this.search == '1') {
 						recommend = true;
 					}
-					this.$axios.get('/community/posts', {
+					this.$axios.get('/api/search/posts', {
 						params: {
 							'locale': 'js',
 							sonkwo_version: 1,
@@ -97,7 +97,7 @@
 				}else{
 					this.itemIsShow=true;
 				}
-				this.$axios.get('/community/posts', {
+				this.$axios.get('/api/search/posts', {
 					params: {
 						'locale':'js',
 						sonkwo_version:1,
@@ -117,7 +117,7 @@
 		},
 		created() {
 			//轮播请求
-			this.$axios.get('/community/lunbo', {
+			this.$axios.get('/api/community_home.json', {
 				params: {
 					"locale":'js',
 					"sonkwo_version":1,
@@ -133,7 +133,7 @@
 			})
 			
 			//请求post
-			this.$axios.get('/community/posts', {
+			this.$axios.get('/api/search/posts', {
 				params: {
 					'locale':'js',
 					sonkwo_version:1,

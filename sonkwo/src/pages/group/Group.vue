@@ -87,7 +87,7 @@
 			}
 		},
 		created(){
-			this.$axios.get('/group/info', {
+			this.$axios.get('/api/groups/534.json', {
 				params: {
 					'locale':'js',
 					sonkwo_version:1,
