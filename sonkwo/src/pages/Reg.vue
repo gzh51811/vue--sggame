@@ -50,7 +50,7 @@ export default {
         if (reg.test(value)) {
           this.$axios
             .post(
-              "http://localhost:3008/users/findUser",
+              "http://47.102.102.242:3008/users/findUser",
               qs.stringify(
                 {
                   username: value
@@ -196,7 +196,7 @@ export default {
           let _this = this;
           this.$axios
             .post(
-              "http://localhost:3008/users/register",
+              "http://47.102.102.242:3008/users/register",
               qs.stringify(
                 {
                   username: this.ruleForm.username,

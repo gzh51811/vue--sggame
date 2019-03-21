@@ -163,7 +163,7 @@ export default {
       let token = localStorage.getItem("token");
       this.$axios
         .post(
-          "http://localhost:3008/users/autoLogin",
+          "http://47.102.102.242:3008/users/autoLogin",
           qs.stringify(
             {
               token
