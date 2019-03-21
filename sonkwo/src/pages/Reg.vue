@@ -201,7 +201,7 @@ export default {
                 {
                   username: this.ruleForm.username,
                   password: this.ruleForm.password,
-                  name:"龙套XXX"
+                  name:"blueberry"
                 },
                 // { inputEmail:"zx",inputPassword:123 },
                 {
