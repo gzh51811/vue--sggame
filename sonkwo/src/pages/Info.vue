@@ -99,7 +99,7 @@ export default {
           let _this = this;
           this.$axios
             .post(
-              "http://localhost:3008/users/update",
+              "http://47.102.102.242:3008/users/update",
               qs.stringify(
                 {
                   username: username,
