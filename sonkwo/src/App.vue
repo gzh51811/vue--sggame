@@ -5,7 +5,7 @@
       <mt-tab-item
         class="bitem"
         :class="{active:idx===active}"
-        v-for="(nav,idx) in this.$store.state.navs"
+        v-for="(nav,idx) in navs"
         :id="nav.name"
         @click.native="goto(nav,idx)"
         :key="nav.name"
@@ -16,38 +16,66 @@
     </mt-tabbar>
   </div>
 </template>
+
 <script>
 import Vue from "vue";
-import { Tabbar, TabItem } from "mint-ui";
-import axios from 'axios';
+
+//引入axios
+import axios from "axios";
+//elementUI框架
 import ElementUI from "element-ui";
 //引入elementUI的css
 import "element-ui/lib/theme-chalk/index.css";
-// 把axios设置到Vue的原型对象上，方便在任意组件中使用
+
 Vue.prototype.$axios = axios;
-//设置请求头
-// axios.defaults.headers.post["Content-type"] = "appliction/x-www-form-urlencoded"
+axios.defaults.headers.post["Content-type"] = "appliction/x-www-form-urlencoded";
+
+import { Tabbar, TabItem } from "mint-ui";
+
 Vue.component(Tabbar.name, Tabbar);
 Vue.component(TabItem.name, TabItem);
 
 // Vue.use(MintUI);
 Vue.use(ElementUI);
+
 export default {
   name: "app",
   data() {
     let name = this.$route.name;
     return {
-    	active: 0,
+      active: 0,
       iftabbar: false,
       rCompent: ["Home", "Headlines", "Community", "Cart", "MyPerson"],
       name: name,
       selected: false,
-      
+      navs: [
+        {
+          text: "商城",
+          name: "Home",
+          icon: "el-icon-goods"
+        },
+        {
+          text: "头条",
+          name: "Headlines",
+          icon: "el-icon-document"
+        },
+        {
+          text: "社区",
+          name: "Community",
+          icon: "el-icon-message"
+        },
+        {
+          text: "购物车",
+          name: "Cart",
+          icon: "el-icon-menu"
+        },
+        {
+          text: "我的",
+          name: "MyPerson",
+          icon: "el-icon-setting"
+        }
+      ],
     };
-  },
-  components:{
-  	Tabbar,
-  	TabItem
   },
   methods: {
     goto(nav, idx) {
@@ -57,8 +85,7 @@ export default {
     },
     checkname() {
       let name = this.$route.name;
-      let navs = this.$store.state.navs;
-      console.log(navs);
+      let navs = this.navs;
       for (var i = 0; i < navs.length; i++) {
         if (navs[i].name == name) {
           this.active = i;
@@ -79,14 +106,18 @@ export default {
 <style scoped>
 .bottom {
   height: 47px;
-  display: flex;
-  flex: 1;
-  align-content: center;
-  justify-content: space-around;
   background: #333;
 }
 .bitem {
   color: #fff;
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+}
+.bitem i {
+  font-size: 16px;
 }
 .mint-tabbar > .mint-tab-item.is-selected,
 .active {

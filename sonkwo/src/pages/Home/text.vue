@@ -13,7 +13,7 @@
     </ul>
   </div>
 </template>
-<style scoped>
+<style>
 .picture-play {
   width: 100vw;
   height: 100vh;

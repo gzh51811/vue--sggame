@@ -15,7 +15,7 @@
             :key="index"
             @click.native="gotoline(item.url)"
           >
-            <img :src="item.cover" alt>
+            <img :src="item.cover">
           </mt-swipe-item>
         </mt-swipe>
       </div>

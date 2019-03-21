@@ -13,34 +13,7 @@ const store =new Vuex.Store({
 	//公共数据
 	state:{
 		postsList:[],
-		cartList:[],
-		navs: [
-        {
-          text: "商城",
-          name: "Home",
-          icon: "el-icon-goods"
-        },
-        {
-          text: "头条",
-          name: "Headlines",
-          icon: "el-icon-document"
-        },
-        {
-          text: "社区",
-          name: "Community",
-          icon: "el-icon-message"
-        },
-        {
-          text: "购物车",
-          name: "Cart",
-          icon: "el-icon-menu"
-        },
-        {
-          text: "我的",
-          name: "MyPerson",
-          icon: "el-icon-setting"
-        }
-      ]
+		cartList:[]
 	},
 	//更新数据
 	mutations:{

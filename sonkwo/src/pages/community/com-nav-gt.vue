@@ -2,8 +2,8 @@
 	<div style="margin-top: 5px;">
 		<div class="">
 			<!--轮播图-->
-			<mt-swipe :auto="4000" class="lunbobox">
-				<mt-swipe-item v-for="(lunbo,idx) in lunboList" class="lunbo" :key="idx">
+			<mt-swipe :auto="4000" class="lunbo">
+				<mt-swipe-item v-for="(lunbo,idx) in lunboList" :key="idx">
 					<!--图片-->
 					<img :src="lunbo.cover" class="luoboimg"/>
 					<p class="lunboTitle">{{lunbo.title}}</p>
@@ -159,13 +159,10 @@
 		border-color: orange !important;
 	}
 	
-	.lunbobox {
-		height: 185px !important;
+	.lunbo {
+		height: 185px;
 	}
-	.lunbo{
-		width: 100%;
-		height: 100%;
-	}
+	
 	.luoboimg {
 		width: 100%;
 	}

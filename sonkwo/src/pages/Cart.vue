@@ -59,7 +59,7 @@
 	}
 </script>
 
-<style scoped>
+<style>
 	.header-black {
 		background: #333333;
 	}
