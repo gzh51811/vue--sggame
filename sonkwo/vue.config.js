@@ -8,7 +8,6 @@ module.exports = {
 	devServer: {
 		proxy: {
 			"/api/*": {
-		        //https://www.sonkwo.com/api/v5/home.json
 		        target: "https://www.sonkwo.com", ///api/v5/home.json
 		        changeOrigin: true,
 		        pathRewrite: {

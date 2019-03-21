@@ -22,7 +22,7 @@
 			</div>
 			<div>
 				<el-button style="width:150px;">游戏详情</el-button>
-				<el-button style="background:#ff5722;width:170px;">关注小组</el-button>
+				<el-button style="background:#ff5722;width:160px;">关注小组</el-button>
 			</div>
 
 			<div class="groupLink">

@@ -90,6 +90,7 @@
 					'Accept': 'application/vnd.sonkwo.v5+json'
 				}
 			}).then(res => {
+				console.log(res.data);
 				this.labelList=res.data;
 				this.labelList.push({name:"更多"});
 			})

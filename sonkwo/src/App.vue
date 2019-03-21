@@ -16,34 +16,21 @@
     </mt-tabbar>
   </div>
 </template>
-
+$store
 <script>
 import Vue from "vue";
-
-//引入axios
-import axios from "axios";
-//elementUI框架
-import ElementUI from "element-ui";
-//引入elementUI的css
-import "element-ui/lib/theme-chalk/index.css";
-
-Vue.prototype.$axios = axios;
-axios.defaults.headers.post["Content-type"] = "appliction/x-www-form-urlencoded";
-
 import { Tabbar, TabItem } from "mint-ui";
-
-Vue.component(Tabbar.name, Tabbar);
-Vue.component(TabItem.name, TabItem);
-
-// Vue.use(MintUI);
-Vue.use(ElementUI);
+import axios from 'axios';
+// 把axios设置到Vue的原型对象上，方便在任意组件中使用
+Vue.prototype.$axios = axios;
+//设置请求头
+axios.defaults.headers.post["Content-type"] = "appliction/x-www-form-urlencoded"
 
 export default {
   name: "app",
   data() {
-    let name = this.$route.name;
     return {
-      active: 0,
+    	active: 0,
       iftabbar: false,
       rCompent: ["Home", "Headlines", "Community", "Cart", "MyPerson"],
       name: name,
@@ -74,8 +61,12 @@ export default {
           name: "MyPerson",
           icon: "el-icon-setting"
         }
-      ],
+      ]
     };
+  },
+  components:{
+  	Tabbar,
+  	TabItem
   },
   methods: {
     goto(nav, idx) {
@@ -85,7 +76,9 @@ export default {
     },
     checkname() {
       let name = this.$route.name;
+      console.log(name);
       let navs = this.navs;
+      console.log(navs);
       for (var i = 0; i < navs.length; i++) {
         if (navs[i].name == name) {
           this.active = i;
@@ -106,22 +99,16 @@ export default {
 <style scoped>
 .bottom {
   height: 47px;
+  display: flex;
+  flex: 1;
+  align-content: center;
+  justify-content: space-around;
   background: #333;
 }
 .bitem {
   color: #fff;
-  display: flex;
-  justify-content: center;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
 }
-.bitem i {
-  font-size: 16px;
-}
-.mint-tabbar > .mint-tab-item.is-selected,
-.active {
-  color: #ff5722;
-  background: #333;
+.is-selected {
+  color: #ff0000;
 }
 </style>
