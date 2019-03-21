@@ -5,7 +5,7 @@
       <mt-tab-item
         class="bitem"
         :class="{active:idx===active}"
-        v-for="(nav,idx) in navs"
+        v-for="(nav,idx) in this.$store.state.navs"
         :id="nav.name"
         @click.native="goto(nav,idx)"
         :key="nav.name"
@@ -16,52 +16,33 @@
     </mt-tabbar>
   </div>
 </template>
-$store
 <script>
 import Vue from "vue";
 import { Tabbar, TabItem } from "mint-ui";
 import axios from 'axios';
+import ElementUI from "element-ui";
+//引入elementUI的css
+import "element-ui/lib/theme-chalk/index.css";
 // 把axios设置到Vue的原型对象上，方便在任意组件中使用
 Vue.prototype.$axios = axios;
 //设置请求头
-axios.defaults.headers.post["Content-type"] = "appliction/x-www-form-urlencoded"
+// axios.defaults.headers.post["Content-type"] = "appliction/x-www-form-urlencoded"
+Vue.component(Tabbar.name, Tabbar);
+Vue.component(TabItem.name, TabItem);
 
+// Vue.use(MintUI);
+Vue.use(ElementUI);
 export default {
   name: "app",
   data() {
+    let name = this.$route.name;
     return {
     	active: 0,
       iftabbar: false,
       rCompent: ["Home", "Headlines", "Community", "Cart", "MyPerson"],
       name: name,
       selected: false,
-      navs: [
-        {
-          text: "商城",
-          name: "Home",
-          icon: "el-icon-goods"
-        },
-        {
-          text: "头条",
-          name: "Headlines",
-          icon: "el-icon-document"
-        },
-        {
-          text: "社区",
-          name: "Community",
-          icon: "el-icon-message"
-        },
-        {
-          text: "购物车",
-          name: "Cart",
-          icon: "el-icon-menu"
-        },
-        {
-          text: "我的",
-          name: "MyPerson",
-          icon: "el-icon-setting"
-        }
-      ]
+      
     };
   },
   components:{
@@ -76,8 +57,7 @@ export default {
     },
     checkname() {
       let name = this.$route.name;
-      console.log(name);
-      let navs = this.navs;
+      let navs = this.$store.state.navs;
       console.log(navs);
       for (var i = 0; i < navs.length; i++) {
         if (navs[i].name == name) {
@@ -108,7 +88,9 @@ export default {
 .bitem {
   color: #fff;
 }
-.is-selected {
-  color: #ff0000;
+.mint-tabbar > .mint-tab-item.is-selected,
+.active {
+  color: #ff5722;
+  background: #333;
 }
 </style>
