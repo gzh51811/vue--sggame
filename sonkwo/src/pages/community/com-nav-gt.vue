@@ -62,7 +62,7 @@
 					if(this.search == '1') {
 						recommend = true;
 					}
-					this.$axios.get('/api/search/posts', {
+					this.$axios.get('/api6/search/posts', {
 						params: {
 							'locale': 'js',
 							sonkwo_version: 1,
@@ -97,7 +97,7 @@
 				}else{
 					this.itemIsShow=true;
 				}
-				this.$axios.get('/api/search/posts', {
+				this.$axios.get('/api6/search/posts', {
 					params: {
 						'locale':'js',
 						sonkwo_version:1,
@@ -133,7 +133,7 @@
 			})
 			
 			//请求post
-			this.$axios.get('/api/search/posts', {
+			this.$axios.get('/api6/search/posts', {
 				params: {
 					'locale':'js',
 					sonkwo_version:1,
